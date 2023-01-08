@@ -20,7 +20,7 @@ const inputSearchHandler = (e) => {
     const searchText = e.target.value.trim();
     if (searchText && searchText.length > 3 && searchLast !== searchText) {
       if (!triggerMode) clearMovieBlock(movieList);
-      getData(`http://www.omdbapi.com/?i=tt3896198&apikey=f59b3819&s=${searchText}`)
+      getData(`https://www.omdbapi.com/?i=tt3896198&apikey=f59b3819&s=${searchText}`)
         .then((movies) => movies.forEach((movie) => addMovie(movie)))
         .catch(console.log);
     }
