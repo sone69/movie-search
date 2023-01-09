@@ -42,6 +42,7 @@ export const createBlock = () => {
     attrs: {
       class: 'search__input-label',
       innerHTML: 'Пошук фільмів',
+      for: 'search',
     },
     container: inputBlock,
   });
@@ -50,6 +51,8 @@ export const createBlock = () => {
     attrs: {
       class: 'search__input-area',
       placeholder: 'Введіть текст',
+      id: 'search',
+      type: 'search',
     },
     container: inputBlock,
   });
@@ -63,6 +66,7 @@ export const createBlock = () => {
     attrs: {
       class: 'search__checkbox',
       type: 'checkbox',
+      id: 'checkbox',
     },
     container: chooseBlock,
     event: 'click',
@@ -73,6 +77,7 @@ export const createBlock = () => {
     attrs: {
       class: 'search__checkbox-label',
       innerHTML: 'Додати фільми до існуючих?',
+      for: 'checkbox',
     },
     container: chooseBlock,
   });
