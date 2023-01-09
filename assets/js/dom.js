@@ -34,9 +34,16 @@ export const createBlock = () => {
     type: 'div',
     attrs: {
       class: 'search__input',
-      innerHTML: 'Пошук фільмів',
     },
     container: searchBlock,
+  });
+  createElement({
+    type: 'label',
+    attrs: {
+      class: 'search__input-label',
+      innerHTML: 'Пошук фільмів',
+    },
+    container: inputBlock,
   });
   inputSearch = createElement({
     type: 'input',
@@ -44,7 +51,7 @@ export const createBlock = () => {
       class: 'search__input-area',
       placeholder: 'Введіть текст',
     },
-    container: searchBlock,
+    container: inputBlock,
   });
   const chooseBlock = createElement({
     type: 'div',
@@ -86,7 +93,7 @@ export const addMovie = (movie) => {
     type: 'img',
     attrs: {
       class: 'movie__image',
-      src: /^(http|https):\/\//i.test(movie.Poster) ? movie.Poster : '',
+      src: /^(http|https):\/\//i.test(movie.Poster) ? movie.Poster : 'assets/img/oops.jpg',
     },
     container: item,
   });
@@ -98,6 +105,7 @@ export const createStyle = () => {
       innerHTML: `
     *{box-sizing: border-box;}
     .container{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
       max-width:1280px;
       width:100%;
       padding: 15px;
@@ -110,7 +118,12 @@ export const createStyle = () => {
     .search__input{
       margin-bottom:10px;
     }
+    .search__input-label{
+      display:block;
+      margin-bottom:5px;
+    }
     .search__input-area{
+      display:block;
       width:100%;
       padding:10px;
       margin-bottom:10px;
@@ -132,8 +145,12 @@ export const createStyle = () => {
       align-items:center;
     }
     .movie__image{
-      width:100%;
-      object-fit:cover;
+      width: 100%;
+      object-fit: cover;
+    }
+    img{
+      width:240px;
+      height:380px;
     }`,
     },
     container: document.head,
